@@ -1,0 +1,35 @@
+Brick Breaker
+30-New: utilizing Mean Stack in our application (30 pts)
+    -Using Mongo DB to manage users. Able to create new accounts, login to existing account. (7pts)
+    -Using Mongo DB to save user information and stats and create a leaderboard. (8pts)
+    -Using Express to track sessions and route to the desired destinations(10 pts)
+    -Implement email verification for new users (5 pts)
+10-New: CSS3 animations and transforms (10pts)
+25-Proper Game Functionality (25pts)
+    -Manage game loop and  all game events using socket IO. (10 pts)
+    -Score Increments Correctly and winner is correctly indicated (4 pts)
+    -Ball moves correctly (4 pts)
+    -Bricks broken correctly (4 pts)
+    -paddle resets when ball is lost (3 pts)
+20-Creative Portion (20 points)
+10-Best Practices (10pts)
+    -Code is well formatted and easy to read with proper commenting (2 points)
+    -Passwords are salted and encrypted (3 points)
+    -Page passes the W3 validator (2 points)
+    -Site is intuitive and easy to use (3 pts) 
+5-Committing to Bit Bucket (5pts)
+
+Features:
+Items: make paddle larger, make paddle smaller, bombs, rockets, fire ball
+Score 10 points for breaking a brick
+Different kinds of bricks with different levels of resiliance. Basic-1 hit explosion, 2, 3, hits required to explode others. Differentiate by color. 
+
+Notes for Index:
+Heading with name
+Images or animation
+Home is create user/login. Username, password, email fields.
+
+Game Page:
+Start
+Levels/options/settings
+Stats

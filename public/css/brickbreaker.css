@@ -1,0 +1,74 @@
+body {
+	font-family: 'Crimson Text', serif;
+	text-align: center;
+}
+ul{
+	padding-left:20px;
+}
+li{
+	text-align: left;
+}
+table, th, td {
+    border: 1px solid black;
+    padding:5px 10px;
+    /*text-align: center;*/
+}
+#login-btn, #createAccount-btn, #jump-btn{
+	padding: 5px 50px;
+	margin: 5px;
+}
+.addEvent-btn{
+	padding: 5px 35px;
+	margin: 10px;
+}
+.modalHeader{
+	border-bottom: 1px solid black;
+	margin: 0px 30px;
+	padding: 5px;
+}
+.btn{
+	border: 0px;
+	background-color:#A12E33;
+	margin: 10px 0px;
+}
+.btn:hover{
+	background-color:#78060B;
+}
+.btn:visited{
+	border: 0px;
+	background-color:#A12E33;
+}
+.btn:active{
+	border: 0px;
+	background-color:#A12E33;
+}
+.btn-primary:focus {
+  border:0px;
+  color: #fff;
+  background-color:#A12E33;
+  border-color: #A12E33;
+}
+#myCanvas{
+	width:1000px;
+	height:500px;
+	/*margin-left: 2.5%;*/
+}
+#gameOver-btn{
+	position:relative;
+	top:-250px;
+}
+#nextLevel-btn{
+	position:relative;
+	top:-250px;
+}
+/*
+.top-btn{
+	position: relative;
+	left: -35%;
+	top: -90px;
+	width: 150px;
+	margin-top: 10px;
+	font-size: 18px;
+	padding: 3px 0px;
+}*/
+

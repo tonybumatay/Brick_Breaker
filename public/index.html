@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brick Breaker</title>
+    <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/brickbreaker.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+</head>
+
+<body id="body" data-ng-app="brickBreaker">
+	<div data-ng-view></div>
+
+	<script>
+	var module = angular.module("brickBreaker", ['ngRoute']);
+
+    module.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+                when('/brickbreaker', {
+                    templateUrl: 'brickbreaker.html',
+                    controller: 'breakerController'
+                }).
+                when('/leaderboard', {
+                    templateUrl: 'leaderBoard.html',
+                    controller: 'leaderboardController'
+                }).
+                otherwise({
+                    redirectTo: '/login',
+                    templateUrl: 'login.html',
+                    controller: 'loginController'
+                });
+        }]);
+    module.controller("loginController", function($scope) {
+    	  document.getElementById("createAccount-btn").addEventListener("click", function(){
+    			var usernameCreate = document.getElementById("usernameCreate").value;
+    			var passwordCreate = document.getElementById("passwordCreate").value;
+    			var passwordVerify = document.getElementById("passwordVerify").value;
+    			if(usernameCreate == "" || passwordCreate == "" || passwordVerify == ""){
+        			alert("please fill in all of the fields");
+    			} else if(passwordCreate != passwordVerify){
+       				 alert("Please make sure your passwords match");
+    			} else {
+        			sendUserInfo(usernameCreate, passwordCreate, passwordVerify);
+    			}
+			});
+
+
+			document.getElementById("login-btn").addEventListener("click", function(){
+			    
+			    var usernameLogin = document.getElementById("usernameLogin").value;
+			    var passwordLogin = document.getElementById("passwordLogin").value;
+			    if(usernameLogin == "" || passwordLogin == ""){
+			        alert("please fill in all of the fields");
+			    } else {
+			        login(usernameLogin, passwordLogin);
+			    }
+			});
+
+
+
+    });
+    module.controller("leaderboardController", function($scope) {
+    	getUsers();
+    	$scope.users = allUsers;
+    	document.getElementById("playButton").addEventListener("click", function(){
+        if(myPaddle.loggedIn){
+    window.location.href = 'http://ec2-52-10-25-225.us-west-2.compute.amazonaws.com:3000/index.html#/brickbreaker';
+        } else {
+            document.getElementById("playButton").remove();
+            window.location.href = "http://ec2-52-10-25-225.us-west-2.compute.amazonaws.com:3000/index.html#/login";
+            alert("please login to play.");
+        }
+    	});
+
+    	document.getElementById("logout-btn").addEventListener("click", function(){
+    	 		logout();
+    		});
+    });
+
+
+    module.controller("breakerController", function($scope) {
+    	document.getElementById("playButton").addEventListener("click", function(){
+        if(myPaddle.loggedIn){
+            init();
+        } else {
+            document.getElementById("playButton").remove();
+            window.location.href = "http://ec2-52-10-25-225.us-west-2.compute.amazonaws.com:3000/index.html#/login";
+            alert("please login to play.");
+        }
+    	});
+
+    	 document.getElementById("leaderBoard").addEventListener("click", function(){
+        		window.location.href = "http://ec2-52-10-25-225.us-west-2.compute.amazonaws.com:3000/index.html#/leaderboard";
+    		});
+
+    	 document.getElementById("logout").addEventListener("click", function(){
+    	 		logout();
+    		});
+    });
+	</script>
+
+
+
+	
+	<!-- <button  type="button" id="logout-btn" class="btn btn-primary btn-md top-btn">Logout</button> -->
+    <script type="text/javascript" src="js/paddle.js"></script>
+    <script type="text/javascript" src="js/ball.js"></script>
+    <script type="text/javascript" src="js/brick.js"></script>		
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/gamecore.js"></script>
+</body>
+</html>

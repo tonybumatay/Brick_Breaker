@@ -1,0 +1,7 @@
+To-Do:
+-User Management
+-Site Navigation
+-Start/end Game, incorporate lives
+-Leaderboard and Stats
+-More control on where ball goes(depending on direction of paddle on contact)
+-challenge other users

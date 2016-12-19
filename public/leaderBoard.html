@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brick Breaker</title>
+    <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/brickbreaker.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Brick Breaker</h1>
+    <h2>Leader Board</h2>
+    <div class= "container-fluid">
+    	<div class="row">
+                  Sort by:
+                  <select ng-model="orderProp">
+                    <option value="username">Alphabetical</option>
+                    <option value="-levels">Level</option>
+                    <option value="-bricks">Bricks</option>
+                  </select>
+    		<div class="col-md-6 col-md-offset-4">
+		 		<table>
+			    	<tr>
+			    		<th>User</th>
+			    		<th>Levels Completed</th>
+			    		<th>Brick Score</th>
+			    	</tr>
+			    	<tr ng-repeat="user in users | orderBy:orderProp">
+			    		<td>{{user.username}}</td>
+			    		<td>{{user.levels}}</td>
+			    		<td>{{user.bricks}}</td>
+			    	</tr>
+		    	</table>
+	    	</div>
+	    	<div class="col-md-2"></div>
+    	</div>
+    </div>
+    <button  type="button" id="playButton" class="btn btn-primary btn-md top-btn">Play</button>
+    <script>
+    	document.getElementById("playButton").addEventListener("click", function(){
+
+    	});
+    </script>
+	<button  type="button" id="logout-btn" class="btn btn-primary btn-md top-btn">Logout</button>
+    <script type="text/javascript", src="js/paddle.js"></script>
+    <script type="text/javascript", src="js/ball.js"></script>
+    <script type="text/javascript", src="js/brick.js"></script>		
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript", src="js/gamecore.js"></script>
+    <script type="text/javascript", src="js/indexJS.js"></script>
+</body>
+</html>

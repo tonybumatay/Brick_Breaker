@@ -1,0 +1,24 @@
+Brick Breaker
+40-New: utilizing Mean Stack in our application (40 pts)
+    -When a New User creates an account it is saved using Mongo DB (5 pts)
+    -Whem an existing User logs in successfully, the credentials are compared to the Mongo DB querry. (5 pts)
+    -Number of levels completed and number of bricks broken are stored continuously for each user using Mongo DB (5 pts)
+    -Game stats are querried from Mongo DB to be displayed on the leaderboard html page (5 pts)
+    -Use angular to iterate through and display user stats on the leaderboard html page (5 pts)
+    -Use Express to verify users and rerout webpages. If unsuccessful, user must try again or create a new account. If successful, the user is rerouted to the home page. From there the user has the option to press different buttons that will rerout to coresponding destinations. (10 pts)
+    -Use Node JS and socket io to send game information between the server and the client (5 pts)
+25-Proper Game Functionality (25pts)
+    -Ball moves correctly (5 pts)
+    -Bricks are removed when hit (5 pts)
+    -paddle moves correctly and is reset when ball is lost (5 pts)
+    -Manage game loop and  all game events using socket IO. All game functions are set in an interval and periodically refreshed and redrawn. (10 pts)
+20-Creative Portion (20 points)
+     -Game play supports different levels 
+     -Level increments/game ends correctly
+     -Ability to sort leaderboards by any of the given categories.                   
+10-Best Practices (10pts)
+    -Code is well formatted and easy to read with proper commenting (2 points)
+    -Passwords are salted and encrypted (3 points)
+    -Page passes the W3 validator (2 points)
+    -Site is intuitive and easy to use (3 pts) 
+5-Committing to Bit Bucket (5pts)

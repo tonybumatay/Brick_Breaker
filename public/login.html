@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brick Breaker</title>
+    <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/brickbreaker.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Brick Breaker</h1>
+    <h2 id = "greeting"></h2>
+    <button  type="button" id="outterLogin-btn" class="btn btn-primary btn-md top-btn" data-toggle="modal" data-target=".login">Login</button><br>
+    <!-- Small modal -->
+					<div class="modal fade login" id="loginModal" tabindex="-1" role="dialog"  aria-hidden="true">
+					  <div class="modal-dialog modal-sm">
+					    <div class="modal-content">
+					      	<h3 class="modalHeader">Login</h3>
+					      	<h4>Username</h4>
+				            <input type="text" id="usernameLogin" name="username"  required>
+				         	<h4>Password</h4>
+				            <input type="password" id="passwordLogin" name="password"  required>
+				            <br>
+				            <button id="login-btn" type="submit" value="Submit" class="btn btn-primary btn-lg">Login</button>
+					    </div>
+					  </div>
+					</div>
+    <button  type="button" id="outterCA-btn" class="btn btn-primary btn-md top-btn" data-toggle="modal" data-target=".createAccount">Create Account</button>
+    <!-- Small modal -->
+					<div class="modal fade createAccount" id="createAccountModal" tabindex="-1" role="dialog"  aria-hidden="true">
+					  <div class="modal-dialog modal-sm">
+					    <div class="modal-content">
+					      	<h3 class="modalHeader">Create Account</h3>
+					      	<h4>Username</h4>
+				            <input id="usernameCreate" type="text" name="username"  required>
+				         	<h4>Password</h4>
+				            <input id="passwordCreate" type="password" name="password"  required>
+				            <br>
+				            <h4>Verify Password</h4>
+				            <input id="passwordVerify" type="password" name="password"  required><br>
+				            <button id="createAccount-btn" type="submit" value="Submit" class="btn btn-primary btn-lg">Create Account</button>
+					    </div>
+					  </div>
+					</div><br>
+	<!-- <button  type="button" id="logout-btn" class="btn btn-primary btn-md top-btn">Logout</button> -->
+    <script type="text/javascript", src="js/paddle.js"></script>
+    <script type="text/javascript", src="js/ball.js"></script>
+    <script type="text/javascript", src="js/brick.js"></script>		
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript", src="js/gamecore.js"></script>
+</body>
+</html>

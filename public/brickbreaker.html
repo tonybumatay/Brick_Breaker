@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Brick Breaker</title>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/brickbreaker.css" rel="stylesheet">
+
+    </head>
+    <body id="body">
+        <h1>Brick Breaker</h1>
+        <button id = "playButton" class="btn btn-primary btn-md top-btn">Play!</button>
+        <button id = "leaderBoard" ng-click="leaderboard()" class="btn btn-primary btn-md top-btn">Leaderboard</button>
+        <button id = "logout" class="btn btn-primary btn-md top-btn">Logout</button>
+        <h2 id = "greeting"></h2>
+        <canvas id="myCanvas">
+        </canvas>
+    </body>
+</html>
